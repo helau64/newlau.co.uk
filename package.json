@@ -1,0 +1,30 @@
+{
+  "name": "helau.co.uk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:css": "postcss app/assets/dev/css/**/*.css -o app/assets/dist/css/main.min.css --watch --verbose",
+    "dev:js": "esbuild app/assets/dev/js/main.js --bundle --watch --outfile=app/assets/dist/js/main.min.js",
+    "dev:11ty": "eleventy --serve --watch",
+    "build:css": "NODE_ENV=production postcss app/assets/dev/css/*.css -o dist/assets/dist/css/main.min.css",
+    "build:js": "esbuild app/assets/dev/js/main.js --bundle --minify --outfile=dist/assets/dist/js/main.min.js",
+    "build:11ty": "ELEVENTY_ENV=production eleventy",
+    "dev": "run-p dev:*",
+    "build": "run-s build:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "autoprefixer": "^10.4.8",
+    "esbuild": "^0.14.53",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^14.1.0",
+    "postcss-nesting": "^10.1.10",
+    "postcss-preset-env": "^7.7.2"
+  }
+}
